@@ -34,10 +34,9 @@ class Logger:
             self.data.append(record.to_dict())
 
     def save(self):
-        with open(self.filename, "w", encoding='utf-2') as f:
+        with open(self.filename, "w" ) as f:
             json.dump(self.data, f, indent=4, ensure_ascii=False)
         print(f"saved in: {self.filename}")
-
 if __name__ == "__main__":
     sensor = TemperatureSensor()
     logger = Logger(num_entries=3)
